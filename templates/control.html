@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Controle do Robô</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/htmx.org"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Controle do Robô</h1>
+        <form hx-post="/control" hx-target="#log-section" hx-trigger="submit" hx-swap="outerHTML">
+            <div class="mb-3">
+                <label for="command" class="form-label">Comando</label>
+                <input type="text" class="form-control" id="command" name="command" placeholder="Digite o comando" required>
+            </div>
+            <button type="submit" class="btn btn-success">Enviar Comando</button>
+            <a href="/" class="btn btn-secondary">Voltar ao Dashboard</a>
+        </form>
+    </div>
+    <div class="container mt-5" id="log-section">
+        <!-- A seção de logs será atualizada aqui -->
+    </div>
+</body>
+</html>
