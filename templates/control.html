@@ -9,14 +9,35 @@
 <body>
     <div class="container mt-5">
         <h1>Controle do Robô</h1>
-        <form hx-post="/control" hx-target="#log-section" hx-trigger="submit" hx-swap="outerHTML">
-            <div class="mb-3">
-                <label for="command" class="form-label">Comando</label>
-                <input type="text" class="form-control" id="command" name="command" placeholder="Digite o comando" required>
+        <!-- Formulário para mover o robô -->
+        <form hx-post="/mover" hx-target="#log-section" hx-swap="outerHTML" class="mb-5">
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="x" class="col-form-label">X</label>
+                    <input type="number" id="x" name="x" class="form-control" placeholder="X">
+                </div>
+                <div class="col-auto">
+                    <label for="y" class="col-form-label">Y</label>
+                    <input type="number" id="y" name="y" class="form-control" placeholder="Y">
+                </div>
+                <div class="col-auto">
+                    <label for="z" class="col-form-label">Z</label>
+                    <input type="number" id="z" name="z" class="form-control" placeholder="Z">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary">Mover</button>
+                </div>
             </div>
-            <button type="submit" class="btn btn-success">Enviar Comando</button>
-            <a href="/" class="btn btn-secondary">Voltar ao Dashboard</a>
         </form>
+        <!-- Botões para controle de sucção -->
+        <div>
+            <button hx-post="/sucção" hx-vals='{"ativar": true}' hx-target="#log-section" hx-swap="outerHTML" class="btn btn-success">Ativar Sucção</button>
+            <button hx-post="/sucção" hx-vals='{"ativar": false}' hx-target="#log-section" hx-swap="outerHTML" class="btn btn-danger">Desativar Sucção</button>
+        </div>
+        
+        <div class="mt-5">
+            <a href="/" class="btn btn-secondary">Voltar ao Dashboard</a>
+        </div>
     </div>
     <div class="container mt-5" id="log-section">
         <!-- A seção de logs será atualizada aqui -->

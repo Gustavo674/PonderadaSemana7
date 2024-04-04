@@ -3,6 +3,9 @@ from datetime import datetime
 
 db = TinyDB('db.json')
 
+def get_all_logs():
+    return db.all()
+
 def log_command(command):
     command['timestamp'] = datetime.now().isoformat()
     db.insert(command)

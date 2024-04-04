@@ -9,9 +9,10 @@
     <div class="container mt-5">
         <h1>Dashboard do Robô</h1>
         <div class="alert alert-info">
-            Status do Robô: <strong>{{ "Conectado" if is_robot_connected else "Desconectado" }}</strong>
+            Status do Robô: <strong id="robot-status">{{ "Conectado" if is_robot_connected else "Desconectado" }}</strong>
         </div>
         <div>
+            <!-- Links para as páginas de controle e logs. -->
             <a href="/control" class="btn btn-primary">Controlar Robô</a>
             <a href="/logs" class="btn btn-secondary">Ver Logs</a>
         </div>
