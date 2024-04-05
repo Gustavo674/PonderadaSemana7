@@ -15,8 +15,8 @@ class RobotClass:
         return self.robo.pose()
 
     # Função para mover o robô para uma posição específica
-    def move_to(self, x, y, z, r, wait=True):
-        self.robo.move_to(x, y, z, r)
+    def move_to(self, x, y, z, r , wait=True):
+        self.robo.move_to(x, y, z, r, wait=wait)
 
     # Função para ligar a ferramenta
     def ligar_ferramenta(self):
