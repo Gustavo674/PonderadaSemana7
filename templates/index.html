@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centro de comandos</title>
+    <title>Centro de Comandos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/style.css">
-    <script src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/htmx.org" crossorigin="anonymous"></script>
     <script src="../static/index.js"></script>
 </head>
 
@@ -18,25 +19,28 @@
                     <img src="../static/capa.avif" alt="robot" class="robot">
                 </div>
                 <div class="labels">
-                    <a href="/" class="brand">Centro de comandos</a>
+                    <a href="/" class="brand">Centro de Comandos</a>
                     <a href="#" class="brand" hx-get="/logs" hx-target=".logs">Logs</a>
                 </div>
             </div>
         </div>
-        <div>           
-            <div class="centralizar">
-                <h1>Qual comando você deseja realizar?</h1>
-                <button onclick="movimentar()">Movimentação</button>
-                <button onclick="ligarAtuador()">Ligar atuador</button>
-                <button onclick="desligarAtuador()">Desligar atuador</button>
-                <button onclick="home()">Home</button>
+        <div class="content">
+            <div class="command-center">
+                <h1>O que quer fazer?</h1>
+                <div class="buttons">
+                    <button class="btn" onclick="movimentar()">Movimentar</button>
+                    <button class="btn" onclick="ligarAtuador()">Acionar a ventosa</button>
+                    <button class="btn" onclick="desligarAtuador()">Desativar a ventosa</button>
+                    <button class="btn" onclick="home()">Home</button>
+                </div>
             </div>
             <div class="logs">
                 {% for log in logs %}
-                    <p>{{ log.comando }}</p>
-                    <p>{{ log.data_hora }}</p>
+                    <div class="log-entry">
+                        <p class="command">{{ log.comando }}</p>
+                        <p class="timestamp">{{ log.data_hora }}</p>
+                    </div>
                 {% endfor %}
-                <hr>
             </div>
         </div>
     </div>

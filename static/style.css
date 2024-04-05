@@ -1,97 +1,126 @@
 /* Estilo básico para o corpo da página */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4; /* Cor de fundo suave */
 }
 
 /* Estilo para o contêiner principal */
 .main {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Define a altura para ocupar toda a altura da janela do navegador */
+    min-height: 100vh; /* Usa min-height para garantir que a altura mínima seja a da janela */
 }
 
 /* Estilo para a barra de navegação */
 .navbar {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
+    background-color: #ff0033; /* Cor de fundo escura */
+    color: #28f70d;
+    padding: 0.5rem 0;
 }
 
 .navbar-inner {
     display: flex;
-    justify-content: space-around; /* Justifica os itens ao redor do contêiner */
+    justify-content: space-around;
+    align-items: center; /* Alinha verticalmente */
+    max-width: 1200px; /* Largura máxima para conteúdo interno */
+    margin: 0 auto; /* Centraliza o conteúdo interno */
 }
 
 .brand {
     color: #fff;
     text-decoration: none;
     font-size: 24px;
-    margin-right: 50px; /* Adiciona uma margem entre os itens */
-    transition: background-color 0.3s; /* Adiciona uma transição suave */
-    padding: 10px;
+    margin-right: 50px;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s, background-color 0.3s; /* Transição para cor de texto e fundo */
 }
 
-.brand:hover {
-    background-color: white; /* Altera a cor de fundo ao passar o mouse por cima */
-    color: #333; /* Altera a cor do texto para contrastar com a cor de fundo */
+.brand:hover, .brand:focus {
+    background-color: #f39c12; /* Cor de destaque ao interagir */
+    color: #34495e;
+    text-decoration: none; /* Remove sublinhado */
 }
 
 /* Estilo para o conteúdo principal */
-.main-content {
-    flex-grow: 1; /* Faz com que este conteúdo principal ocupe o espaço restante */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.content {
+    padding: 2rem;
 }
 
-/* Estilo para os botões */
-button {
-    margin: 5px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
+.command-center {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Estilo dos botões */
+.buttons {
+    display: flex; /* Mantém o uso de flexbox para alinhar os botões */
+    flex-direction: column; /* Empilha os botões verticalmente */
+    align-items: flex-end; /* Alinha os botões à direita */
+    gap: 1rem; /* Espaço entre os botões */
+}
+
+.btn {
+    padding: 1rem 2rem;
+    background-color: #5bdb34;
+    color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.3rem;
     cursor: pointer;
-    font-size: 16px;
-    text-transform: uppercase;
+    font-size: 1rem;
+    transition: background-color 0.3s; /* Transição suave para mudança de cor */
+    text-transform: uppercase; /* Texto em maiúsculas */
 }
 
-button:hover {
-    background-color: #0056b3;
-}
-.robot{
-    width: 80px;
-    height: 80px;
-    margin: 0 auto;
+.btn:hover {
+    background-color: #d307a3;
 }
 
-.centralizar {
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+/* Adiciona uma margem à direita dos botões para garantir algum espaço */
+.command-center {
+    display: flex;
+    justify-content: space-between; /* Separa o conteúdo e os botões */
 }
 
+/* Se houver mais conteúdo ao lado dos botões, você pode precisar ajustar isso */
+.content {
+    display: flex;
+    justify-content: flex-end; /* Alinha o contêiner `.buttons` à direita */
+}
+/* Estilo para as imagens */
+.robot {
+    width: 100px;
+    height: 100px;
+}
+
+/* Estilo para a seção de logs */
 .logs {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #333;
-    border-radius: 5px;
-    width: 50%;
+    margin: 1rem auto;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    width: 80%; /* Ajuste a largura dos logs conforme necessário */
+    background-color: white;
 }
 
-.labels{
-    display: flex;
-    width: 100%;
-    padding: 10px;
-    justify-content: space-around;
+.log-entry {
+    border-bottom: 1px solid #eee; /* Separação sutil entre entradas de log */
+    padding: 0.5rem;
+}
+
+.command, .timestamp {
+    margin: 0.2rem 0;
+}
+
+@media (max-width: 768px) {
+    .navbar-inner, .content, .logs {
+        width: 95%; /* Layout mais fluido em telas menores */
+        margin: 0 auto;
+    }
+
+    .buttons .btn {
+        width: 100%; /* Botões ocupam a largura total em dispositivos móveis */
+        margin: 0.5rem 0;
+    }
 }
