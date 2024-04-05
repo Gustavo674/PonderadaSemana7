@@ -1,0 +1,97 @@
+/* Estilo básico para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para o contêiner principal */
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Define a altura para ocupar toda a altura da janela do navegador */
+}
+
+/* Estilo para a barra de navegação */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.navbar-inner {
+    display: flex;
+    justify-content: space-around; /* Justifica os itens ao redor do contêiner */
+}
+
+.brand {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    margin-right: 50px; /* Adiciona uma margem entre os itens */
+    transition: background-color 0.3s; /* Adiciona uma transição suave */
+    padding: 10px;
+}
+
+.brand:hover {
+    background-color: white; /* Altera a cor de fundo ao passar o mouse por cima */
+    color: #333; /* Altera a cor do texto para contrastar com a cor de fundo */
+}
+
+/* Estilo para o conteúdo principal */
+.main-content {
+    flex-grow: 1; /* Faz com que este conteúdo principal ocupe o espaço restante */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Estilo para os botões */
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+.robot{
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.centralizar {
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    width: 50%;
+}
+
+.labels{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    justify-content: space-around;
+}
